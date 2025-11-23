@@ -30,7 +30,9 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          chmod +x node_modules/.bin/vite
+          npm run build
 
       - name: Upload build output
         uses: actions/upload-pages-artifact@v4
@@ -48,5 +50,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
 
