@@ -1,16 +1,24 @@
-import React from 'react'
+import React from "react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-10 border-t border-slate-800/70">
-      <h2 className="text-xl sm:text-2xl font-semibold text-slate-50 mb-3">Contact</h2>
-      <p className="text-sm text-slate-300 mb-4 max-w-xl">
-        I’m open to opportunities in Software Engineering, ML Engineering, and Data Analytics. If you’d like to
-        collaborate, discuss an idea, or just say hi, feel free to reach out.
+    <section
+      id="contact"
+      className="py-12 border-t border-slate-800/70"
+    >
+      <h2 className="text-xl sm:text-2xl font-semibold text-slate-50 mb-3">
+        Contact
+      </h2>
+      <p className="text-sm text-slate-300 mb-6 max-w-xl">
+        I&apos;m open to roles in Software Engineering, ML Engineering and Data
+        Analytics. If you&apos;d like to collaborate, discuss an idea, or just say
+        hi, feel free to reach out.
       </p>
+
       <div className="grid md:grid-cols-[3fr,2fr] gap-6 text-sm text-slate-300">
+        {/* Form (static demo) */}
         <form
-          className="space-y-3 rounded-2xl bg-slate-950/70 border border-slate-800/80 p-4"
+          className="space-y-3 rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4"
           onSubmit={(e) => e.preventDefault()}
         >
           <div className="grid sm:grid-cols-2 gap-3">
@@ -40,38 +48,50 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="inline-flex px-4 py-2 rounded-full text-xs font-medium bg-emerald-400 text-slate-950 hover:bg-emerald-300 transition"
+            className="inline-flex px-4 py-2 rounded-full text-xs font-medium bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 hover:brightness-110 transition"
           >
             Send (static demo)
           </button>
         </form>
+
+        {/* Direct contact info */}
         <div className="space-y-3">
-          <div className="rounded-2xl bg-slate-950/70 border border-slate-800/80 p-4">
+          <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4">
             <p className="text-xs text-slate-400 mb-1">Email</p>
             <a
               href="mailto:harivardhanreddyyaadaram@gmail.com"
-              className="text-emerald-300 hover:text-emerald-200 break-all"
+              className="text-emerald-300 hover:text-emerald-200 break-all text-xs"
             >
               harivardhanreddyyaadaram@gmail.com
             </a>
           </div>
-          <div className="rounded-2xl bg-slate-950/70 border border-slate-800/80 p-4">
+          <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4">
             <p className="text-xs text-slate-400 mb-1">Location</p>
-            <p>Hyderabad, Telangana, India</p>
+            <p className="text-xs">Hyderabad, Telangana, India</p>
           </div>
-          <div className="rounded-2xl bg-slate-950/70 border border-slate-800/80 p-4">
-            <p className="text-xs text-slate-400 mb-1">Social</p>
-            <a
-              href="https://linkedin.com/in/harivardhan-reddy"
-              target="_blank"
-              rel="noreferrer"
-              className="text-emerald-300 hover:text-emerald-200 text-xs"
-            >
-              LinkedIn
-            </a>
+          <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4 space-y-2">
+            <p className="text-xs text-slate-400 mb-1">Profiles</p>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <a
+                href="https://www.linkedin.com/in/harivardhan-reddyy/"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-1 rounded-full border border-slate-700/80 hover:border-emerald-400 hover:text-emerald-200 transition"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/Harivardhanreddyy"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-1 rounded-full border border-slate-700/80 hover:border-emerald-400 hover:text-emerald-200 transition"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
