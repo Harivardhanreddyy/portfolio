@@ -1,71 +1,124 @@
 import React from "react";
+import {
+  Linkedin,
+  Github,
+  Mail,
+  FileText,
+} from "lucide-react";
 
 export default function Contact() {
   const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
 
   return (
-    <section id="contact" className="py-20 border-t border-slate-800/70">
+    <section
+      id="contact"
+      className="py-20 border-t border-slate-800/70"
+    >
       <div className="max-w-5xl mx-auto px-5">
 
-        <h2 className="text-3xl font-semibold text-slate-100 mb-4">
-          Contact
+        {/* TITLE */}
+        <h2 className="text-3xl font-semibold text-slate-100 mb-4 text-center">
+          Let’s Connect
         </h2>
 
-        <p className="text-slate-400 max-w-2xl mb-10">
-          Open to Data Analyst / Business Analyst roles.
-          Reach out directly or review my resume.
+        <p className="text-slate-400 max-w-2xl mx-auto mb-12 text-center">
+          Open to Data Analyst and Business Analyst roles.
+          Feel free to reach out, connect, or view my resume.
         </p>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        {/* CARD */}
+        <div
+          className="rounded-2xl border border-slate-800/80
+                     bg-slate-950/70 p-8
+                     flex flex-col gap-8"
+        >
 
-          {/* INFO */}
-          <div className="space-y-5">
-            <div className="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-5">
-              <p className="text-sm text-slate-400">Email</p>
-              <a
-                href="mailto:harivardhanreddyyadaram@gmail.com"
-                className="text-slate-100 hover:text-emerald-400 transition"
-              >
-                harivardhanreddyyadaram@gmail.com
-              </a>
-            </div>
+          {/* EMAIL */}
+          <a
+            href="mailto:harivardhanreddyyadaram@gmail.com"
+            className="flex items-center gap-3
+                       text-slate-300 hover:text-emerald-300
+                       transition"
+          >
+            <Mail className="w-5 h-5 text-emerald-400" />
+            harivardhanreddyyadaram@gmail.com
+          </a>
 
-            <div className="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-5">
-              <p className="text-sm text-slate-400">Location</p>
-              <p className="text-slate-100">
-                Hyderabad, Telangana, India
-              </p>
-            </div>
+          {/* SOCIAL BUTTONS */}
+          <div className="flex flex-wrap gap-4">
+
+            {/* LINKEDIN */}
+            <a
+              href="https://www.linkedin.com/in/harivardhan-reddyy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2
+                         px-5 py-2.5 rounded-full
+                         border border-emerald-400/40
+                         bg-emerald-500/10
+                         text-emerald-300
+                         hover:bg-emerald-500/20
+                         transition"
+            >
+              <Linkedin className="w-5 h-5" />
+              LinkedIn
+            </a>
+
+            {/* GITHUB */}
+            <a
+              href="https://github.com/Harivardhanreddyy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2
+                         px-5 py-2.5 rounded-full
+                         border border-slate-700/70
+                         bg-slate-900/60
+                         text-slate-200
+                         hover:border-slate-500
+                         transition"
+            >
+              <Github className="w-5 h-5" />
+              GitHub
+            </a>
+
           </div>
 
-          {/* RESUME */}
-          <div className="rounded-2xl border border-slate-800/80 bg-slate-950/70 p-6">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">
-              Resume
-            </h3>
+          {/* RESUME BUTTONS */}
+          <div className="flex flex-col sm:flex-row gap-4">
 
-            <div className="flex flex-col gap-4">
-              <a
-                href={resumeUrl}
-                target="_blank"
-                className="px-5 py-2 rounded-full text-center
-                           border border-slate-700
-                           text-slate-300 hover:text-white transition"
-              >
-                View Resume
-              </a>
+            {/* VIEW */}
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2
+                         px-6 py-2.5 rounded-full
+                         border border-slate-700/70
+                         bg-slate-900/60
+                         text-slate-200
+                         hover:border-slate-500
+                         transition"
+            >
+              <FileText className="w-5 h-5" />
+              View Resume
+            </a>
 
-              <a
-                href={resumeUrl}
-                download
-                className="px-5 py-2 rounded-full text-center
-                           border border-emerald-400/40
-                           bg-emerald-500/20
-                           text-emerald-300 hover:bg-emerald-500/30 transition"
-              >
-                Download Resume
-              </a>
-            </div>
+            {/* DOWNLOAD */}
+            <a
+              href={resumeUrl}
+              download
+              className="inline-flex items-center justify-center gap-2
+                         px-6 py-2.5 rounded-full
+                         border border-emerald-400/40
+                         bg-emerald-500/10
+                         text-emerald-300
+                         hover:bg-emerald-500/20
+                         transition"
+            >
+              <FileText className="w-5 h-5" />
+              Download Resume
+            </a>
+
           </div>
 
         </div>

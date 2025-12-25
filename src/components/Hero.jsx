@@ -103,14 +103,15 @@ export default function Hero() {
                             gap-4">
               <a
                 href={resumeUrl}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-2.5 rounded-full text-center
                            bg-emerald-500/20
                            border border-emerald-400/40
                            text-emerald-300 font-medium
                            hover:bg-emerald-500/30 transition"
               >
-                Download Resume
+                View Resume
               </a>
 
               <a
