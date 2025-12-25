@@ -8,7 +8,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-// ⭐ NEW IMPORT for scroll animations
+// ⭐ Scroll animations
 import MotionFadeIn from './components/MotionFadeIn';
 
 export default function App() {
@@ -17,7 +17,8 @@ export default function App() {
 
       <Navbar />
 
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 👇 ADD pt-16 HERE TO FIX OVERLAP */}
+      <main className="pt-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Hero */}
         <MotionFadeIn delay={0}>

@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const groups = [
   {
@@ -12,7 +11,14 @@ const groups = [
   },
   {
     title: "ML & CV",
-    items: ["Pandas", "NumPy", "Scikit-learn", "TensorFlow", "LightGBM", "OpenCV"],
+    items: [
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "TensorFlow",
+      "LightGBM",
+      "OpenCV",
+    ],
   },
   {
     title: "Cloud & DevOps",
@@ -30,60 +36,65 @@ const groups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-16 border-t border-slate-800/70">
-      <h2 className="text-2xl font-semibold text-slate-50 mb-3">Skills</h2>
-      <p className="text-sm text-slate-400 mb-10">
-        A stack tuned for ML-driven products, analytics, and modern backend systems.
-      </p>
+    <section
+      id="skills"
+      className="py-14 sm:py-20 border-t border-slate-800/70"
+    >
+      <div className="max-w-6xl mx-auto px-5">
 
-      {/* GRID */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {groups.map((group, index) => (
-          <motion.div
-            key={group.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.08 }}
-            whileHover={{
-              y: -6,
-              scale: 1.02,
-              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.55)",
-              borderColor: "rgba(45, 212, 191, 0.4)",
-            }}
-            className="relative rounded-2xl border border-slate-800 bg-slate-950/70 p-5
-                       transition-all duration-300"
-          >
-            {/* Radial Glow */}
-            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top,_rgba(45,212,191,0.18),_transparent_65%)] pointer-events-none rounded-2xl" />
+        {/* Heading */}
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-100 mb-3">
+          Skills
+        </h2>
 
-            {/* Content */}
-            <div className="relative">
-              <h3 className="text-sm font-semibold text-slate-100 mb-3 tracking-wide">
-                {group.title}
-              </h3>
+        <p className="text-slate-400 text-sm sm:text-base mb-10 max-w-3xl">
+          A balanced skill set focused on data analysis, analytics engineering,
+          and applied machine learning.
+        </p>
 
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <motion.span
-                    key={item}
-                    whileHover={{
-                      scale: 1.12,
-                      backgroundColor: "rgba(45,212,191,0.2)",
-                      borderColor: "rgba(45,212,191,0.5)",
-                      color: "white",
-                    }}
-                    transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                    className="px-3 py-1 rounded-full border border-slate-700/70 
-                               bg-slate-900/70 text-[11px] text-slate-300 
-                               transition-all duration-200"
-                  >
-                    {item}
-                  </motion.span>
-                ))}
+        {/* Skill Cards */}
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {groups.map((group) => (
+            <div
+              key={group.title}
+              className="relative rounded-2xl
+                         border border-slate-800/80
+                         bg-slate-950/80
+                         p-5 sm:p-6"
+            >
+              {/* Glow */}
+              <div className="absolute inset-px rounded-2xl opacity-40
+                              bg-[radial-gradient(circle_at_top,_rgba(45,212,191,0.2),_transparent_55%)]
+                              pointer-events-none" />
+
+              <div className="relative">
+                <h3 className="text-sm sm:text-base font-semibold text-slate-100 mb-3">
+                  {group.title}
+                </h3>
+
+                {/* Pills */}
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="
+                        px-3 py-1.5
+                        rounded-full
+                        bg-slate-900/80
+                        border border-slate-700/80
+                        text-xs sm:text-sm
+                        text-slate-200
+                      "
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </motion.div>
-        ))}
+          ))}
+        </div>
+
       </div>
     </section>
   );

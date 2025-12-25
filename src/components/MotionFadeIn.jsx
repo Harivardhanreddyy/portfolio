@@ -12,7 +12,7 @@ export default function MotionFadeIn({ children, delay = 0 }) {
         type: "spring",
         stiffness: 60,
       }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       {children}
     </motion.div>
